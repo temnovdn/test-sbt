@@ -7,25 +7,29 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by dmitrytemnov on 16/10/15.
  */
-public class FileReader {
+public final class FileReader {
 
     static final Logger LOGGER = LoggerFactory.getLogger(FileReader.class);
 
-    public static ArrayList<String[]> readFile(final String filepath) {
-        ArrayList<String[]> operations = new ArrayList<String[]>();
+    private FileReader() {
+    }
+
+    public static List<String[]> readFile(final String filepath) {
+        final List<String[]> operations = new ArrayList<String[]>();
 
         BufferedReader br = null;
         String line = "";
-        String splitter = ";";
+        final String splitter = ";";
 
         try {
             br = new BufferedReader(new java.io.FileReader(filepath));
             while ((line = br.readLine()) != null) {
-                String[] row = line.split(splitter);
+                final String[] row = line.split(splitter);
                 operations.add(row);
             }
         } catch (FileNotFoundException e) {
@@ -34,6 +38,6 @@ public class FileReader {
         } catch (IOException e) {
             e.printStackTrace();
         }
-            return operations;
+        return operations;
     }
 }

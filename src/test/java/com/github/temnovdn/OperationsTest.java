@@ -4,7 +4,6 @@ import com.github.temnovdn.steps.AllureSteps;
 import com.github.temnovdn.utils.FileReader;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.runner.RunWith;
@@ -35,7 +34,7 @@ public class OperationsTest {
     @Parameterized.Parameters
     public static List<String[]> testData() {
 
-        final ArrayList<String[]> data = FileReader.readFile("src/main/resourses/testfile");
+        final List<String[]> data = FileReader.readFile("src/main/resources/testfile");
 
         return data;
     }
