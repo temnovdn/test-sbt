@@ -13,7 +13,8 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <aspectj.version>1.7.4</aspectj.version>
-    <allure.version>1.4.19</allure.version>
+    <allure.junit.adaptor.version>1.5.0-RC1</allure.junit.adaptor.version>
+    <allure.plugin.version>2.4</allure.plugin.version>
     <maven.compiler.plugin.version>3.3</maven.compiler.plugin.version>
     <maven.compiler.plugin.source>1.7</maven.compiler.plugin.source>
     <maven.compiler.plugin.target>1.7</maven.compiler.plugin.target>
@@ -36,7 +37,13 @@
     <dependency>
       <groupId>ru.yandex.qatools.allure</groupId>
       <artifactId>allure-junit-adaptor</artifactId>
-      <version>${allure.version}</version>
+      <version>${allure.junit.adaptor.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>ru.yandex.qatools.allure</groupId>
+      <artifactId>allure-maven-plugin</artifactId>
+      <version>${allure.plugin.version}</version>
     </dependency>
 
     <dependency>
@@ -173,7 +180,14 @@
   </build>
 
   <reporting>
-
+    <excludeDefaults>true</excludeDefaults>
+    <plugins>
+      <plugin>
+        <groupId>ru.yandex.qatools.allure</groupId>
+        <artifactId>allure-maven-plugin</artifactId>
+        <version>${allure.plugin.version}</version>
+      </plugin>
+    </plugins>
   </reporting>
 
 </project>

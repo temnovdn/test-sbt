@@ -1,7 +1,7 @@
 package com.github.temnovdn;
 
+import com.github.temnovdn.steps.AllureSteps;
 import com.github.temnovdn.utils.FileReader;
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -43,37 +43,17 @@ public class OperationsTest {
     @Test
     public void test() {
 
-        LOGGER.info(String.format("Testing: %s %s %s = %s", operand1, operation, operand2, result));
-
         if (operation.equals("+")) {
-            int expectedResult = Integer.parseInt(result);
-            int actualResult = Integer.parseInt(operand1) + Integer.parseInt(operand2);
-            LOGGER.info(String.format("Actual result: %s", result));
-            Assert.assertEquals(expectedResult, actualResult);
+            AllureSteps.addTest(operand1, operand2, result);
 
         } else if (operation.equals("-")) {
-            int expectedResult = Integer.parseInt(result);
-            int actualResult = Integer.parseInt(operand1) - Integer.parseInt(operand2);
-            LOGGER.info(String.format("Actual result: %s", result));
-            Assert.assertEquals(expectedResult, actualResult);
+            AllureSteps.subtractTest(operand1, operand2, result);
 
         } else if (operation.equals("*")) {
-            int expectedResult = Integer.parseInt(result);
-            int actualResult = Integer.parseInt(operand1) * Integer.parseInt(operand2);
-            LOGGER.info(String.format("Actual result: %s", result));
-            Assert.assertEquals(expectedResult, actualResult);
+            AllureSteps.multiplyingTest(operand1, operand2, result);
 
         } else if (operation.equals("/")) {
-            float expectedResult = Float.parseFloat(result);
-            float actualResult;
-            try {
-                actualResult = Integer.parseInt(operand1) / Integer.parseInt(operand2);
-                LOGGER.info(String.format("Actual result: %s", result));
-                Assert.assertEquals(expectedResult, actualResult, 1e-10);
-            } catch (ArithmeticException ex) {
-                LOGGER.info("Actual result: / by zero exception caught");
-                Assert.assertEquals(ex.getMessage(), "/ by zero");
-            }
+            AllureSteps.divisionTest(operand1, operand2, result);
 
         } else {
             LOGGER.info("Wrong operation type");
