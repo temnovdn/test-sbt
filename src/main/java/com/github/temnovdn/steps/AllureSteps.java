@@ -54,6 +54,7 @@ public final class AllureSteps {
             Assert.assertEquals(expectedResult, actualResult);
         } catch (ArithmeticException ex) {
             Assert.assertEquals(ex.getMessage(), "/ by zero");
+            Assert.assertEquals(result, "/0");
             LOGGER.info("Divide by zero exception caught");
         }
     }
