@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by dmitrytemnov on 16/10/15.
+ * Methods for handling data file.
  */
 public final class FileReader {
 
