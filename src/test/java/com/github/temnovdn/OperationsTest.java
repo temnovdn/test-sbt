@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 
 
 /**
- * Created by dmitrytemnov on 16/10/15.
+ * Java/JUnit 4 parametrized test example.
  */
 @RunWith(value = Parameterized.class)
 public class OperationsTest {
