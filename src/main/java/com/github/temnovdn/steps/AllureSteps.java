@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 import ru.yandex.qatools.allure.annotations.Step;
 
 /**
- * Created by Everyone on 25.10.2015.
+ * This class contains Allure steps for reporting.
  */
 public final class AllureSteps {
 
